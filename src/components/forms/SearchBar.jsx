@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Navbar, Form, Button } from 'react-bootstrap';
+import icon from './images/movie-icon.png';
 
 class SearchBar extends Component {
   constructor(props) {
@@ -27,7 +28,16 @@ class SearchBar extends Component {
   render() {
     return (
       <Navbar bg='secondary' expand='md' className='mb-3'>
-        <Navbar.Brand className='text-light'>Movie Catalog</Navbar.Brand>
+        <Navbar.Brand className='text-light'>
+          <img
+            src={icon}
+            width='30'
+            height='30'
+            className='mr-1'
+            alt='Movie Catalog'
+          />
+          Movie Catalog
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar' />
         <Navbar.Collapse id='basic-navbar'>
           <Form inline className='ml-auto' onSubmit={this.handleSubmit}>
