@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   getFeatured = () => {
-    const FEATURED_API = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${process.env.REACT_APP_MOVIE_API}&page=1`;
+    const FEATURED_API = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=10e3eda4e9debf030198c2320f119df2&page=1`;
 
     axios
       .get(FEATURED_API)
@@ -33,7 +33,7 @@ class App extends Component {
   handleValueChange = (value) => {
     this.setState({ searchTerm: value });
 
-    const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_MOVIE_API}&query=${value}`;
+    const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=10e3eda4e9debf030198c2320f119df2&query=${value}`;
 
     axios
       .get(SEARCH_API)
