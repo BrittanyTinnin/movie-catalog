@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Row, Col } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 
 // import FEATURED_API from './api/moviedb/';
 
@@ -31,18 +31,13 @@ class App extends Component {
   };
 
   handleValueChange = (value) => {
-    console.log('inside handleValueChange in App');
-    console.log(value);
-    console.log(this.state.searchTerm);
     this.setState({ searchTerm: value });
-    console.log(this.state.searchTerm);
 
     const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_MOVIE_API}&query=${value}`;
 
     axios
       .get(SEARCH_API)
       .then((response) => {
-        console.log(response.data.results);
         this.setState({ movies: response.data.results });
       })
       .catch((e) => {
