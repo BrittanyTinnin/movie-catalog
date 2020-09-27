@@ -15,7 +15,6 @@ const Movie = (props) => {
     ? props.movie.overview
     : 'No overview provided.';
 
-  console.log(props.movie.overview);
 
   return (
     <Col>
